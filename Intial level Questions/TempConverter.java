@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-class OddEvenChecker {
-
+class TempConverter {
     public static void main(String[] args) {
-        System.out.println("Wlcome, Now let's check if an entered number is odd or even");
+        System.out.println("Welcome, Now let's see how to converter temperature");
         String continueInput;
+
         try (Scanner input = new Scanner(System.in)) {
             do {
-                System.out.print("Please enter a number: ");
-                int n = input.nextInt();
-
-                checkOddEven(n);
+                System.out.print("Tell me the temperture in Fahrenheit: ");
+                float f = input.nextFloat();
+                float ans = temConvert(f);
+                System.out.printf("The temperture in celsius is %.2f\n", ans);
 
                 while (true) {
                     System.out.print("Do you want to continue? Press Y/N: ");
@@ -25,9 +25,7 @@ class OddEvenChecker {
             System.out.println("Thank you for using this app");
         }
     }
-
-    public static void checkOddEven(int a) {
-        String ans = a % 2 == 0 ? "Its an even number" : "Its an odd number";
-        System.out.println(ans);
+    public static float temConvert(float f) {
+        return (f - 32) * 5 / 9;
     }
 }

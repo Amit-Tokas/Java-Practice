@@ -1,21 +1,17 @@
 import java.util.Scanner;
-
-class ArmstrongNum {
+class Table {
   public static void main(String[] args) {
-    System.out.println("Welcome!");
+    System.out.println("Welcome! printing table of an entered number");
     String continueInput;
 
     try (Scanner input = new Scanner(System.in)) {
       do {
-        System.out.print("Please enter a number: ");
-        int n = input.nextInt();
-
-        boolean ans = isArmStrong(n);
-        System.out
-            .println("The number n = " + n + " is " + (ans ? "an Armstrong number." : "not an Armstrong number."));
+        System.out.print("Please tell me number of which want to print the table: ");
+        int num = input.nextInt();
+        printingTable(num);
 
         while (true) {
-          System.out.print("Do you want to continue? Press Y/N: ");
+          System.out.print("Do you want to continue? Please press Y/N: ");
           continueInput = input.next();
           if (continueInput.equalsIgnoreCase("y") || continueInput.equalsIgnoreCase("n")) {
             break;
@@ -28,14 +24,9 @@ class ArmstrongNum {
     }
   }
 
-  public static boolean isArmStrong(int n) {
-    int org = n;
-    int res = 0;
-    while (n>0){
-      int digit = n%10;
-      res = res + (int)Math.pow(digit, 3);
-      n /=10;
+  public static void printingTable(int a) {
+    for (int i = 1; i <= 10; i++) {
+      System.out.println(a + " X " + i + " = " + (a * i));
     }
-    return false;
   }
 }

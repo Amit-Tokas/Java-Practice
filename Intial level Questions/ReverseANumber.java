@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class PowerOfNum {
+public class ReverseANumber {
   public static void main(String[] args) {
     System.out.println("Welcome! let's see how reverse all the digits oa given number");
     String continueInput;
@@ -9,9 +9,7 @@ class PowerOfNum {
       do {
         System.out.print("Please enter a number: ");
         int n = input.nextInt();
-        System.out.print("Please enter a number up to which you want to calculate the power: ");
-        int p = input.nextInt();
-        power(n, p);
+        reverse(n);
 
         while (true) {
           System.out.print("Do you want to continue? Press Y/N: ");
@@ -27,12 +25,14 @@ class PowerOfNum {
     }
   }
 
-  public static double power(int a, int p) {
-    int res = 1; // result or resultant number i.e our final answer.
-    for (int i = 0; i < p; i++) {
-      res = res * a;
+  public static void reverse(int a) {
+    int org = a; // To preserve Original value of 'a'
+    int revNum = 0; // result or resultant number i.e our final answer.
+    while (a > 0) {
+      int rem = a % 10;
+      revNum = revNum * 10 + rem;
+      a /= 10;
     }
-    System.out.println("The power of " + a + " upto " + p + " is " + res);
-    return res;
+    System.out.println("The reversed number of " + org + " is " + revNum);
   }
 }
