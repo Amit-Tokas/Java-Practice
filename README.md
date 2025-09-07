@@ -1,4 +1,4 @@
-🧭 Professional Summary
+🧭 Professional Summary:
 Core strength in Java development with a solid grasp of object-oriented programming, data structures, algorithms, and software design principles.
 Growing expertise in Frontend development:
 HTML, CSS, JavaScript
